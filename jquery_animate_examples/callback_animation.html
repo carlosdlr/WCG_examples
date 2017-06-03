@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Using the jquery CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+  <button id="go">» Animate</button>
+  <p>This example shows a basic animation using the CSS properties object parameter,
+    duration string and a callback function that is executed by default when the animation is complete
+  </p>
+
+  <script>
+$( "#go" ).click(function() {
+  $( "p" ).animate({
+    height: 200,
+    width: 400,
+    opacity: 0.5
+  }, "slow", function (){
+    alert("The animation is complete");
+  } );//CSS properties object, duration string and a callback function
+});
+</script>
+</body>
+</html>

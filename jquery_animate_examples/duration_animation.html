@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Using the jquery CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+div {
+  background-color: #bca;
+  width: 100px;
+  border: 1px solid blue;
+}
+</style>
+</head>
+<body>
+
+  <button id="go">» Run</button>
+  <div id="block">Hello! Web Code Geek</div>
+
+  <script>
+// Using multiple unit types within one animation.
+$( "#go" ).click(function() {
+  $( "#block" ).animate({
+    width: "70%",
+    opacity: 0.4,
+    marginLeft: "0.6in",
+    fontSize: "3em",
+    borderWidth: "10px"
+  }, 1500 );//CSS properties object and duration
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Using the jquery CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+  .block {
+    position: absolute;
+    background-color: #058CFA;
+    left: 50px;
+    width: 90px;
+    height: 90px;
+    margin: 5px;
+  }
+</style>
+</head>
+<body>
+
+<button id="left">left</button>
+<button id="right">right</button>
+<div class="block"></div>
+<div id="result"></div>
+
+<script>
+$( "#right" ).click(function() {
+  $( ".block" ).animate({ "left": "+=50px" },
+      {duration:"slow", step: function(now, fx){
+        var data = fx.elem.id + " " + fx.prop + ": " + now;
+        $( "#result" ).append( "<div>" + data + "</div>" );
+     }//using the step callback that is called for each animated property
+   });
+});
+
+$( "#left" ).click(function(){
+  $( ".block" ).animate({ "left": "-=50px" }, "slow" );
+});
+</script>
+</body>
+</html>
